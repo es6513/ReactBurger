@@ -1,0 +1,69 @@
+{
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es6": true
+  },
+  "extends": [
+    "plugin:react/recommended"
+  ],
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "plugins": [
+    "react",
+    "babel"
+  ],
+  "rules": {
+    "react/display-name": [0],
+    "space-infix-ops": [
+      "error",
+      {
+        "int32Hint": false
+      }
+    ],
+    "object-curly-newline": [
+      "error",
+      {
+        "ObjectPattern": {
+          "minProperties":2
+        },
+        "ImportDeclaration": "never",
+        "ExportDeclaration": "never"
+      }
+    ],
+    "object-property-newline": [
+      "error",
+      {
+        "allowMultiplePropertiesPerLine": false
+      }
+    ],
+    "react/prop-types": [
+      0
+    ],
+    "indent": [
+      "error",
+      "tab"
+    ],
+    "linebreak-style": [
+      "error",
+      "windows"
+    ],
+    "quotes": [
+      "error",
+      "double",
+      {
+        "allowTemplateLiterals": true
+      }
+    ],
+    "semi": [
+      "error",
+      "always"
+    ]
+  }
+}

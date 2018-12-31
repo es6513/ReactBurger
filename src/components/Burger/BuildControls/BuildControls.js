@@ -21,6 +21,7 @@ const controls = [
 	}
 ];
 
+
 const buildControls = (props)=>(
 	<div className={styles.BuildControls}>
 		<p>Current Price : <strong>{props.price}</strong></p>
@@ -28,8 +29,14 @@ const buildControls = (props)=>(
 			<BuildControl 
 				key={ctrl.label}
 				label={ctrl.label} 
-				added={() => props.ingredientAdded(ctrl.type)}
-				removed={()=>props.ingredientRemoved(ctrl.type)}
+				added={() => {
+					props.ingredientAdded(ctrl.type);
+					// props.priceUpdated(ctrl.type,"add");
+				}}
+				removed={()=>{
+					props.ingredientRemoved(ctrl.type);
+					// props.priceUpdated(ctrl.type,"minus");
+				}}
 				disabled={props.disabled[ctrl.type]}
 			 />
 		))}

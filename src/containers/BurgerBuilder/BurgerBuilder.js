@@ -18,9 +18,6 @@ const INGREDIENT_PRICES = {
 	bacon:0.7
 };
 
-const round = (value,decimals)=>{
-	return Number(Math.round(value + "e" + decimals) + "e-" + decimals);
-};
 
 class BurgerBuilder extends Component {
 	constructor(props) {

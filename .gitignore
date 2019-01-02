@@ -74,3 +74,7 @@ typings/
 
 # FuseBox cache
 .fusebox/
+.firebaserc
+.firebase/hosting.ZGlzdA.cache
+dist/404.html
+firebase.json

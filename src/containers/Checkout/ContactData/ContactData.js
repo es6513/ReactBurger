@@ -85,7 +85,7 @@ class ContactData extends Component {
 							}
 						]
 					},
-					value:"",
+					value:"fatest",
 					validation:{},
 					valid:true
 				},

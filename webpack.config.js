@@ -51,10 +51,7 @@ module.exports = {
 		]
 	},
 	resolve: {alias: createLodashAliases()},
-	devServer: {
-		historyApiFallback: true,
-		contentBase: "./dist"
-	},
+	devServer: {contentBase: "./dist"},
 	plugins: [
 		new HtmlWebPackPlugin({
 			template: "./src/index.html",

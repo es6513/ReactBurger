@@ -1,0 +1,47 @@
+# 語言
+language: node_js
+
+# 穩定更新版
+node_js:
+- lts/*
+
+# 跑CI的branch(只跑master)
+branches:
+  only:
+  - master
+
+# 定義 build 的過程會產生某些檔案是可以在下一次 build 利用
+cache:
+  directories:
+  - node_modules
+
+# 寄信位置
+notifications:
+  email:
+    recipients:
+      - es6513@gmail.com
+    on_success: always
+    on_failure: always
+
+# 安裝依賴(node_modules)
+install:
+- npm install
+
+# 運行腳本前做的事
+before_script:
+- if [ ${TRAVIS_BRANCH} == "lab" ]; then
+    export REACT_APP_STAGE=lab;
+  fi
+
+# 運行腳本
+script:
+- npm run build
+
+# 部署位置設定
+deploy:
+  provider: pages
+  skip_cleanup: true
+  local-dir: dist
+  github-token: $GITHUB_API_KEY
+  on:
+    branch: master
